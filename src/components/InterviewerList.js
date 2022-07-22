@@ -4,15 +4,15 @@ import "components/InterviewerList.scss";
 
 export default function InterviewerList(props){
   
-  const interviewerList = props.interviewers.map(list => {
-
+  const interviewerList = props.interviewers.map((list) => {
+    const {value, onChange} = props;
     return (
       <InterviewerListItem
       key = {list.id}
       name = {list.name}
       avatar = {list.avatar}
-      selected = {list.id === props.interviewer}
-      setInterviewer = {() => props.setInterviewer(list.id)}
+      selected = {list.id === value}
+      setInterviewer = {() => onChange(list.id)}
       />
     
     )
